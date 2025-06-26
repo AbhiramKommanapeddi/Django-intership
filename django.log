@@ -1,0 +1,540 @@
+INFO 2025-06-25 20:46:21,462 autoreload 8332 17528 Watching for file changes with StatReloader
+INFO 2025-06-25 20:46:36,612 autoreload 20764 16896 Watching for file changes with StatReloader
+WARNING 2025-06-25 20:48:50,174 log 8332 23060 Not Found: /favicon.ico
+INFO 2025-06-25 20:49:25,226 autoreload 15952 25884 Watching for file changes with StatReloader
+WARNING 2025-06-25 21:39:50,188 bot 16196 20348 Telegram bot token not configured. Bot will not start.
+ERROR 2025-06-25 21:43:06,778 redis 8332 14248 Connection to Redis lost: Retry (0/20) now.
+ERROR 2025-06-25 21:43:10,862 redis 8332 14248 Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2025-06-25 21:43:15,943 redis 8332 14248 Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2025-06-25 21:43:21,045 redis 8332 14248 Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2025-06-25 21:43:26,112 redis 8332 14248 Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2025-06-25 21:43:31,176 redis 8332 14248 Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2025-06-25 21:43:36,239 redis 8332 14248 Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2025-06-25 21:43:41,309 redis 8332 14248 Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2025-06-25 21:43:46,368 redis 8332 14248 Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2025-06-25 21:43:51,415 redis 8332 14248 Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2025-06-25 21:43:56,474 redis 8332 14248 Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2025-06-25 21:44:01,559 redis 8332 14248 Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2025-06-25 21:44:06,625 redis 8332 14248 Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2025-06-25 21:44:11,695 redis 8332 14248 Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2025-06-25 21:44:16,761 redis 8332 14248 Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2025-06-25 21:44:21,819 redis 8332 14248 Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2025-06-25 21:44:26,893 redis 8332 14248 Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2025-06-25 21:44:31,963 redis 8332 14248 Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2025-06-25 21:44:37,048 redis 8332 14248 Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2025-06-25 21:44:42,123 redis 8332 14248 Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2025-06-25 21:44:47,202 redis 8332 14248 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2025-06-25 21:44:48,302 log 8332 14248 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 127, in reconnect_on_error
+    yield
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 177, in _consume_from
+    self._pubsub.subscribe(key)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\client.py", line 916, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\client.py", line 749, in execute_command
+    self.connection = self.connection_pool.get_connection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\base.py", line 797, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 373, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 169, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 147, in start
+    self._consume_from(initial_task_id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 176, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 384, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\commands\core.py", line 2015, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\api\views.py", line 119, in register_user
+    send_welcome_email.delay(user.id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\task.py", line 594, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\base.py", line 795, in send_task
+    with P.connection._reraise_as_library_errors():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+WARNING 2025-06-25 21:46:51,992 log 8332 26436 Bad Request: /api/register/
+WARNING 2025-06-25 21:47:42,036 log 8332 20208 Bad Request: /api/register/
+WARNING 2025-06-25 21:48:33,115 log 8332 23312 Bad Request: /api/register/
+INFO 2025-06-26 09:20:48,273 autoreload 26960 25312 Watching for file changes with StatReloader
+WARNING 2025-06-26 09:22:38,526 log 8332 19276 Bad Request: /api/register/
+ERROR 2025-06-26 09:37:23,350 log 8332 2064 Internal Server Error: /admin/telegram_bot/telegramuser/add/
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: telegram_bot_telegramuser.telegram_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1227, in save_model
+    obj.save()
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: telegram_bot_telegramuser.telegram_id
+INFO 2025-06-26 09:38:10,972 autoreload 15952 25884 C:\Users\abhik\Downloads\Django intership\telegram_bot\admin.py changed, reloading.
+INFO 2025-06-26 09:38:11,928 autoreload 8332 17528 C:\Users\abhik\Downloads\Django intership\telegram_bot\admin.py changed, reloading.
+INFO 2025-06-26 09:38:13,849 autoreload 5020 5876 Watching for file changes with StatReloader
+INFO 2025-06-26 09:38:14,282 autoreload 21372 16588 Watching for file changes with StatReloader
+WARNING 2025-06-26 09:39:49,220 log 21372 6324 Forbidden (Permission denied): /admin/telegram_bot/telegramuser/add/
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1763, in _changeform_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2025-06-26 09:40:08,967 log 21372 6432 Forbidden (Permission denied): /admin/telegram_bot/telegramuser/add/
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\contrib\admin\options.py", line 1763, in _changeform_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+INFO 2025-06-26 09:40:51,627 autoreload 21372 16588 C:\Users\abhik\Downloads\Django intership\telegram_bot\admin.py changed, reloading.
+INFO 2025-06-26 09:40:52,348 autoreload 5020 5876 C:\Users\abhik\Downloads\Django intership\telegram_bot\admin.py changed, reloading.
+INFO 2025-06-26 09:40:54,150 autoreload 25436 1644 Watching for file changes with StatReloader
+INFO 2025-06-26 09:40:54,995 autoreload 14948 27176 Watching for file changes with StatReloader
+INFO 2025-06-26 09:46:40,874 autoreload 25356 22944 Watching for file changes with StatReloader
+WARNING 2025-06-26 09:51:04,051 log 25436 21464 Bad Request: /api/register/
+WARNING 2025-06-26 09:52:03,685 log 25436 26288 Unauthorized: /api/protected/
+WARNING 2025-06-26 09:52:08,127 log 25436 22440 Unauthorized: /api/login/
+WARNING 2025-06-26 09:54:05,638 log 25436 9840 Unauthorized: /api/protected/
+WARNING 2025-06-26 09:56:13,191 log 25436 22248 Unauthorized: /api/protected/
+WARNING 2025-06-26 09:56:24,401 log 25436 20816 Not Found: /api/invalid/
+WARNING 2025-06-26 09:56:50,846 log 25436 19080 Not Found: /favicon.ico
+INFO 2025-06-26 09:57:30,308 autoreload 25356 22944 C:\Users\abhik\Downloads\Django intership\api\admin.py changed, reloading.
+INFO 2025-06-26 09:57:30,704 autoreload 25436 1644 C:\Users\abhik\Downloads\Django intership\api\admin.py changed, reloading.
+INFO 2025-06-26 09:57:30,683 autoreload 14948 27176 C:\Users\abhik\Downloads\Django intership\api\admin.py changed, reloading.
+INFO 2025-06-26 09:57:33,230 autoreload 25448 25908 Watching for file changes with StatReloader
+INFO 2025-06-26 09:57:33,407 autoreload 13256 24172 Watching for file changes with StatReloader
+INFO 2025-06-26 10:00:49,352 autoreload 22524 19544 C:\Users\abhik\Downloads\Django intership\django_internship\settings.py changed, reloading.
+INFO 2025-06-26 10:00:49,639 autoreload 25448 25908 C:\Users\abhik\Downloads\Django intership\api\admin.py changed, reloading.
+INFO 2025-06-26 10:00:49,496 autoreload 13256 24172 C:\Users\abhik\Downloads\Django intership\django_internship\celery.py changed, reloading.
+INFO 2025-06-26 10:00:55,050 autoreload 13388 21212 Watching for file changes with StatReloader
+INFO 2025-06-26 10:00:55,575 autoreload 12876 10336 Watching for file changes with StatReloader
+INFO 2025-06-26 10:00:55,625 autoreload 6548 23908 Watching for file changes with StatReloader
+INFO 2025-06-26 10:01:58,985 autoreload 12876 10336 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:01:59,158 autoreload 6548 23908 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:01:59,818 autoreload 13388 21212 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:02:01,169 autoreload 23140 18284 Watching for file changes with StatReloader
+INFO 2025-06-26 10:02:01,170 autoreload 17212 21780 Watching for file changes with StatReloader
+INFO 2025-06-26 10:02:01,853 autoreload 9584 13576 Watching for file changes with StatReloader
+INFO 2025-06-26 10:02:20,132 autoreload 17212 21780 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:02:20,224 autoreload 23140 18284 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:02:20,452 autoreload 9584 13576 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:02:22,121 autoreload 24188 24340 Watching for file changes with StatReloader
+INFO 2025-06-26 10:02:22,191 autoreload 27176 17904 Watching for file changes with StatReloader
+INFO 2025-06-26 10:02:22,397 autoreload 27284 26304 Watching for file changes with StatReloader
+INFO 2025-06-26 10:04:01,767 autoreload 27176 17904 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:04:01,794 autoreload 27284 26304 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:04:02,151 autoreload 24188 24340 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:04:04,142 autoreload 27404 14912 Watching for file changes with StatReloader
+INFO 2025-06-26 10:04:04,145 autoreload 14932 14824 Watching for file changes with StatReloader
+INFO 2025-06-26 10:04:04,347 autoreload 15008 1800 Watching for file changes with StatReloader
+ERROR 2025-06-26 10:08:06,419 redis 14932 23340 Connection to Redis lost: Retry (0/20) now.
+ERROR 2025-06-26 10:08:10,488 redis 14932 23340 Connection to Redis lost: Retry (1/20) in 1.00 second.
+ERROR 2025-06-26 10:08:15,569 redis 14932 23340 Connection to Redis lost: Retry (2/20) in 1.00 second.
+ERROR 2025-06-26 10:08:20,619 redis 14932 23340 Connection to Redis lost: Retry (3/20) in 1.00 second.
+ERROR 2025-06-26 10:08:25,676 redis 14932 23340 Connection to Redis lost: Retry (4/20) in 1.00 second.
+ERROR 2025-06-26 10:08:30,762 redis 14932 23340 Connection to Redis lost: Retry (5/20) in 1.00 second.
+ERROR 2025-06-26 10:08:35,844 redis 14932 23340 Connection to Redis lost: Retry (6/20) in 1.00 second.
+ERROR 2025-06-26 10:08:40,911 redis 14932 23340 Connection to Redis lost: Retry (7/20) in 1.00 second.
+ERROR 2025-06-26 10:08:45,971 redis 14932 23340 Connection to Redis lost: Retry (8/20) in 1.00 second.
+ERROR 2025-06-26 10:08:51,014 redis 14932 23340 Connection to Redis lost: Retry (9/20) in 1.00 second.
+ERROR 2025-06-26 10:08:56,065 redis 14932 23340 Connection to Redis lost: Retry (10/20) in 1.00 second.
+ERROR 2025-06-26 10:09:01,123 redis 14932 23340 Connection to Redis lost: Retry (11/20) in 1.00 second.
+ERROR 2025-06-26 10:09:06,185 redis 14932 23340 Connection to Redis lost: Retry (12/20) in 1.00 second.
+ERROR 2025-06-26 10:09:11,241 redis 14932 23340 Connection to Redis lost: Retry (13/20) in 1.00 second.
+ERROR 2025-06-26 10:09:16,274 redis 14932 23340 Connection to Redis lost: Retry (14/20) in 1.00 second.
+ERROR 2025-06-26 10:09:21,350 redis 14932 23340 Connection to Redis lost: Retry (15/20) in 1.00 second.
+ERROR 2025-06-26 10:09:26,419 redis 14932 23340 Connection to Redis lost: Retry (16/20) in 1.00 second.
+ERROR 2025-06-26 10:09:31,481 redis 14932 23340 Connection to Redis lost: Retry (17/20) in 1.00 second.
+ERROR 2025-06-26 10:09:36,565 redis 14932 23340 Connection to Redis lost: Retry (18/20) in 1.00 second.
+ERROR 2025-06-26 10:09:41,642 redis 14932 23340 Connection to Redis lost: Retry (19/20) in 1.00 second.
+CRITICAL 2025-06-26 10:09:46,705 redis 14932 23340 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+ERROR 2025-06-26 10:09:47,332 log 14932 23340 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 127, in reconnect_on_error
+    yield
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 177, in _consume_from
+    self._pubsub.subscribe(key)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\client.py", line 916, in subscribe
+    ret_val = self.execute_command("SUBSCRIBE", *new_channels.keys())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\client.py", line 749, in execute_command
+    self.connection = self.connection_pool.get_connection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 264, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 265, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    raise err
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 615, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\base.py", line 797, in send_task
+    self.backend.on_task_call(P, task_id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 373, in on_task_call
+    self.result_consumer.consume_from(task_id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 169, in consume_from
+    return self.start(task_id)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 147, in start
+    self._consume_from(initial_task_id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 176, in _consume_from
+    with self.reconnect_on_error():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 130, in reconnect_on_error
+    self._ensure(self._reconnect_pubsub, ())
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 384, in ensure
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\backends\redis.py", line 106, in _reconnect_pubsub
+    metas = self.backend.client.mget(self.subscribed_to)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\commands\core.py", line 2015, in mget
+    return self.execute_command("MGET", *args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\client.py", line 533, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 1086, in get_connection
+    connection.connect()
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\redis\connection.py", line 270, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\api\views.py", line 119, in register_user
+    send_welcome_email.delay(user.id)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\task.py", line 444, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\task.py", line 594, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\celery\app\base.py", line 795, in send_task
+    with P.connection._reraise_as_library_errors():
+  File "C:\Program Files\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\abhik\Downloads\Django intership\venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+INFO 2025-06-26 10:20:11,906 autoreload 19212 5412 Watching for file changes with StatReloader
+INFO 2025-06-26 10:21:54,557 autoreload 27404 14912 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:21:54,704 autoreload 15008 1800 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:21:55,527 autoreload 14932 14824 C:\Users\abhik\Downloads\Django intership\api\tasks.py changed, reloading.
+INFO 2025-06-26 10:21:58,353 autoreload 18896 22236 Watching for file changes with StatReloader
+INFO 2025-06-26 10:21:58,354 autoreload 20360 17004 Watching for file changes with StatReloader
+INFO 2025-06-26 10:21:58,394 autoreload 17784 2452 Watching for file changes with StatReloader
